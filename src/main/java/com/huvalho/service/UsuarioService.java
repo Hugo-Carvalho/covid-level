@@ -69,7 +69,6 @@ public class UsuarioService {
                 e.printStackTrace();
             }
         }
-        browser.close();
 
         if (usuarioReq.getInfectado()) {
             usuario.setInfectado(true);
