@@ -1,3 +1,4 @@
+com\huvalho\object\UsuarioRes.class
 com\huvalho\controller\UsuarioController.class
 com\huvalho\service\UsuarioService.class
 com\huvalho\repository\UsuarioRepository.class

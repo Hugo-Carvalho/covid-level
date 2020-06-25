@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     Usuario findByTelefone(String telefone);
+    Usuario findByTelefoneAndInfectado(String telefone, boolean infectado);
 }
