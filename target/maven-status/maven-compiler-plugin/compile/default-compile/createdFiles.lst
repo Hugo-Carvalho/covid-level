@@ -3,5 +3,6 @@ com\huvalho\controller\UsuarioController.class
 com\huvalho\service\UsuarioService.class
 com\huvalho\repository\UsuarioRepository.class
 com\huvalho\CovidlevelApplication.class
+com\huvalho\utils\ControladoraSelenium.class
 com\huvalho\entity\Usuario.class
 com\huvalho\object\UsuarioReq.class

@@ -4,7 +4,7 @@ import com.huvalho.entity.Usuario;
 import com.huvalho.object.UsuarioReq;
 import com.huvalho.object.UsuarioRes;
 import com.huvalho.repository.UsuarioRepository;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.huvalho.utils.ControladoraSelenium;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,8 +12,6 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 @Service
 public class UsuarioService {
@@ -45,10 +43,7 @@ public class UsuarioService {
             }
         }
 
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        WebDriver browser = new ChromeDriver(options);
+        WebDriver browser = ControladoraSelenium.getInstancia().getWebSection();
 
         for (String cidadeUf : usuarioReq.getCidades()) {
             String url = "https://brasil.io/dataset/covid19/caso_full/?search=&epidemiological_week=&date=&order_for_place=&state=" + cidadeUf.split("-")[1] + "&city=" + cidadeUf.split("-")[0].replaceAll(" ", "+") + "&city_ibge_code=&place_type=&last_available_date=&is_last=True&is_repeated=";
